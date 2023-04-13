@@ -31,7 +31,7 @@ describe("nft_program", async () => {
     const nftName = "Solana Course NFT";
     const nftSymbol = "SOLС";
     const nftUri =
-      "";
+      "https://raw.githubusercontent.com/arsenijkovalov/NFT-Program/main/nft_program/assets/nft.json";
 
     try {
       await program.methods
