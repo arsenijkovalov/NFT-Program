@@ -108,9 +108,9 @@ pub fn create_associated_token_account(ctx: &Context<CreateToken>) -> Result<()>
     anchor_spl::associated_token::create(CpiContext::new(
         ctx.accounts.associated_token_program.to_account_info(),
         anchor_spl::associated_token::Create {
-            payer: ctx.accounts.mint_authority.to_account_info(),
+            payer: ctx.accounts.payer.to_account_info(),
             associated_token: ctx.accounts.associated_token_account.to_account_info(),
-            authority: ctx.accounts.mint_authority.to_account_info(),
+            authority: ctx.accounts.payer.to_account_info(),
             mint: ctx.accounts.mint_account.to_account_info(),
             system_program: ctx.accounts.system_program.to_account_info(),
             token_program: ctx.accounts.token_program.to_account_info(),
