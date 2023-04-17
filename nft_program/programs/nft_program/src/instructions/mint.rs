@@ -80,7 +80,7 @@ pub fn create_master_edition_account(ctx: &Context<MintToken>) -> Result<()> {
             ctx.accounts.mint_account.key(),           // Mint Account
             ctx.accounts.mint_authority.key(),         // Update Authority
             ctx.accounts.mint_authority.key(),         // Mint Authority
-            ctx.accounts.metadata_account.key(),       // Metadata Account
+            ctx.accounts.metadata_account.key(),       // Metadata Account (is PDA of ['metadata', token metadata program id, mint account])
             ctx.accounts.payer.key(),                  // Payer Account
             Some(TOKEN_MAX_SUPPLY), // The maximum number of times NFTs can be printed from this Master Edition
                                     // When set to None, the program will enable unlimited prints. You can disable NFT printing by setting the Max Supply to 0
